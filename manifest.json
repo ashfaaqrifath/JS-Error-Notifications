@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "JS Error Notifications",
+  "version": "3.0",
+  "description": "Shows JavaScript errors as notifications in the browser webpage.",
+
+  "permissions": ["storage"],
+
+  "icons": {
+    "16": "icons/mylogo3-16.png",
+    "48": "icons/mylogo3-48.png",
+    "128": "icons/mylogo3-128.png"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_icon": {
+      "16": "icons/mylogo3-16.png",
+      "48": "icons/mylogo3-48.png",
+      "128": "icons/mylogo3-128.png"
+    },
+    "default_title": "JS Error Notifications (Click to toggle)"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
