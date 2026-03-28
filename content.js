@@ -1,4 +1,4 @@
-let isEnabled = true;
+let isEnabled = false;
 
 // Check if extension is enabled on page load
 chrome.storage.local.get(['isEnabled'], (result) => {
