@@ -1,2 +1,2 @@
-# JavaScript-Error-Notification
-JavaScript Error Notification
+# JS-Error-Notifications
+JavaScript Error Notifications
