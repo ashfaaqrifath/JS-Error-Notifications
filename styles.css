@@ -10,17 +10,28 @@
 
 .title {
     font-weight: 800;
-    color: red;
+    color: #ff6b6b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.error-name {
+    background: rgba(255, 0, 0, 0.246);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-family: 'Chakra Petch', sans-serif;
+    color: #ffb3b3;
 }
 
 .error-toast {
     font-family: 'Chakra Petch', sans-serif;
 
     padding: 12px;
-    border-radius: 12px;
+    border-radius: 15px;
 
     background: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
 
     color: white;
     font-size: 13px;
@@ -29,6 +40,30 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 
     animation: slideIn 0.3s ease;
+}
+
+.msg {
+    margin-top: 4px;
+    color: #e0e0e0;
+    font-family: 'Chakra Petch', sans-serif;
+    word-break: break-word;
+}
+
+.location {
+    margin-top: 4px;
+    color: #7cc6ffb9;
+    font-size: 12px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.close-btn {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.close-btn:hover {
+    opacity: 1;
 }
 
 @keyframes slideIn {
