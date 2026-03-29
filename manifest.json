@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "JS Error Notifications",
-  "version": "3.0",
+  "version": "3.5",
   "description": "Shows JavaScript errors as notifications in the browser webpage.",
 
   "permissions": ["storage"],
