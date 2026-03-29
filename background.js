@@ -1,8 +1,8 @@
-// Initialize extension state
+
 chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.local.get(['isEnabled'], (result) => {
         if (result.isEnabled === undefined) {
-            // Set to enabled by default on first install
+            // enabled default first install
             chrome.storage.local.set({ isEnabled: true });
             updateToolbarIcon(true);
         } else {
@@ -11,19 +11,16 @@ chrome.runtime.onInstalled.addListener(() => {
     });
 });
 
-// Handle toolbar icon click
+
 chrome.action.onClicked.addListener((tab) => {
     chrome.storage.local.get(['isEnabled'], (result) => {
-        const currentState = result.isEnabled !== false;
-        const newState = !currentState;
+        const currentState = result.isEnabled === false;
+        const newState = currentState;
 
-        // Save new state
         chrome.storage.local.set({ isEnabled: newState });
 
-        // Update toolbar icon
         updateToolbarIcon(newState);
 
-        // Notify content script of state change
         chrome.tabs.sendMessage(tab.id, {
             action: 'toggle',
             isEnabled: newState
@@ -45,7 +42,7 @@ function updateToolbarIcon(isEnabled) {
     }
 }
 
-// Update toolbar icon when storage changes
+
 chrome.storage.onChanged.addListener((changes, areaName) => {
     if (areaName === 'local' && changes.isEnabled) {
         updateToolbarIcon(changes.isEnabled.newValue);
