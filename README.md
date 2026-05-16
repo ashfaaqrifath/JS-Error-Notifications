@@ -69,9 +69,3 @@ JS-Error-Notifications/
 - JavaScript (Manifest V3)
 - Chrome Extensions API
 - CSS
-
----
-
-## 📄 License
-
-MIT — free to use and modify.
